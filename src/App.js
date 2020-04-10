@@ -30,7 +30,7 @@ class App extends Component {
               name: "S",
               showInLegend: true,
               xValueFormatString: "day #0",
-              yValueFormatString: "#,####0.0000",
+              yValueFormatString: "S #,####0.0000",
               dataPoints: dataPointsS_sir
           },
           {
@@ -38,7 +38,7 @@ class App extends Component {
               name: "I",
               showInLegend: true,
               xValueFormatString: "day #0",
-              yValueFormatString: "#,####0.0000",
+              yValueFormatString: "I #,####0.0000",
               dataPoints: dataPointsI_sir
           },
           {
@@ -46,7 +46,7 @@ class App extends Component {
               name: "R",
               showInLegend: true,
               xValueFormatString: "day #0",
-              yValueFormatString: "#,####0.0000",
+              yValueFormatString: "R #,####0.0000",
               dataPoints: dataPointsR_sir
           },
 
@@ -69,7 +69,7 @@ class App extends Component {
                   name: "S",
                   showInLegend: true,
                   xValueFormatString: "day #0",
-                  yValueFormatString: "#,####0.0000",
+                  yValueFormatString: "S #,####0.0000",
                   dataPoints: dataPointsS_seir
               },
               {
@@ -77,7 +77,7 @@ class App extends Component {
                   name: "E",
                   showInLegend: true,
                   xValueFormatString: "day #0",
-                  yValueFormatString: "#,####0.0000",
+                  yValueFormatString: "E #,####0.0000",
                   dataPoints: dataPointsE_seir
               },
               {
@@ -85,7 +85,7 @@ class App extends Component {
                   name: "I",
                   showInLegend: true,
                   xValueFormatString: "day #0",
-                  yValueFormatString: "#,####0.0000",
+                  yValueFormatString: "I #,####0.0000",
                   dataPoints: dataPointsI_seir
               },
               {
@@ -93,7 +93,7 @@ class App extends Component {
                   name: "R",
                   showInLegend: true,
                   xValueFormatString: "day #0",
-                  yValueFormatString: "#,####0.0000",
+                  yValueFormatString: "R #,####0.0000",
                   dataPoints: dataPointsR_seir
               },
 
