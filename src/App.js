@@ -61,7 +61,7 @@ class App extends Component {
   componentDidMount(){
     let chart = this.chart;
 
-    fetch('http://127.0.0.1:5000/get_sir_data', {
+    fetch('http://127.0.0.1:5000/get_corona_data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
