@@ -118,11 +118,15 @@ class App extends Component {
     let chart_sir = this.chart_sir;
     let chart_seir = this.chart_seir;
 
-    fetch('http://127.0.0.1:5000/get_corona_data', {
+    let header = new Headers();
+    header.append('Content-Type', 'application/json');
+
+    let sir_endpoint = 'http://127.0.0.1:5000/get_corona_data';
+    let seir_endpoint = 'http://127.0.0.1:5000/get_corona_data';
+
+    fetch(sir_endpoint, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: header,
       body: JSON.stringify(
           {
             model_type: 'SIR',
@@ -157,11 +161,9 @@ class App extends Component {
             chart_sir.render();
         });
 
-    fetch('http://127.0.0.1:5000/get_corona_data', {
+    fetch(seir_endpoint, {
       method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
+      headers: header,
       body: JSON.stringify(
           {
               model_type: 'SEIR',
