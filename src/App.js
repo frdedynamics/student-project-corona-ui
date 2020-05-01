@@ -118,11 +118,15 @@ class App extends Component {
     let chart_sir = this.chart_sir;
     let chart_seir = this.chart_seir;
 
+    // Replace this test token with something better.
+    let my_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODgzNjU1ODEsImlhdCI6MTU4ODM1NDc4MSwibmJmIjoxNTg4MzU0NzgxLCJpZGVudGl0eSI6MX0.vf9J1yj41BSwk809cQTGKwhhOjIu5TG9LUah2npbO6g';
+
     let header = new Headers();
     header.append('Content-Type', 'application/json');
+    header.append('Authorization', `JWT ${my_token}`);
 
-    let sir_endpoint = 'http://127.0.0.1:5000/get_corona_data';
-    let seir_endpoint = 'http://127.0.0.1:5000/get_corona_data';
+    let sir_endpoint = 'http://127.0.0.1:5000/model/SIR';
+    let seir_endpoint = 'http://127.0.0.1:5000/model/SEIR';
 
     fetch(sir_endpoint, {
       method: 'POST',
@@ -144,18 +148,18 @@ class App extends Component {
       return response.json();
     })
         .then(function(data) {
-          for (let i = 0; i < data.length; i++) {
+          for (let i = 0; i < data['model'].length; i++) {
             dataPointsS_sir.push({
-              x: data[i]['t'],
-              y: data[i]['S'],
+              x: data['model'][i]['t'],
+              y: data['model'][i]['S'],
             });
             dataPointsI_sir.push({
-              x: data[i]['t'],
-              y: data[i]['I'],
+              x: data['model'][i]['t'],
+              y: data['model'][i]['I'],
             });
             dataPointsR_sir.push({
-              x: data[i]['t'],
-              y: data[i]['R'],
+              x: data['model'][i]['t'],
+              y: data['model'][i]['R'],
             });
           }
             chart_sir.render();
@@ -182,22 +186,22 @@ class App extends Component {
       return response.json();
     })
       .then(function(data) {
-          for (let i = 0; i < data.length; i++) {
+          for (let i = 0; i < data['model'].length; i++) {
               dataPointsS_seir.push({
-                  x: data[i]['t'],
-                  y: data[i]['S'],
+                  x: data['model'][i]['t'],
+                  y: data['model'][i]['S'],
               });
               dataPointsE_seir.push({
-                  x: data[i]['t'],
-                  y: data[i]['E'],
+                  x: data['model'][i]['t'],
+                  y: data['model'][i]['E'],
               });
               dataPointsI_seir.push({
-                  x: data[i]['t'],
-                  y: data[i]['I'],
+                  x: data['model'][i]['t'],
+                  y: data['model'][i]['I'],
               });
               dataPointsR_seir.push({
-                  x: data[i]['t'],
-                  y: data[i]['R'],
+                  x: data['model'][i]['t'],
+                  y: data['model'][i]['R'],
               });
           }
           chart_seir.render();
