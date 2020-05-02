@@ -119,7 +119,7 @@ class App extends Component {
     let chart_seir = this.chart_seir;
 
     // Replace this test token with something better.
-    let my_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODgzNjU1ODEsImlhdCI6MTU4ODM1NDc4MSwibmJmIjoxNTg4MzU0NzgxLCJpZGVudGl0eSI6MX0.vf9J1yj41BSwk809cQTGKwhhOjIu5TG9LUah2npbO6g';
+    let my_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODg0MjgwMjEsImlhdCI6MTU4ODQxNzIyMSwibmJmIjoxNTg4NDE3MjIxLCJpZGVudGl0eSI6MX0.mhyAy3fVOyLOG8nhMkHCCL2VXsRicyEl1JON-ekAflo';
 
     let header = new Headers();
     header.append('Content-Type', 'application/json');
