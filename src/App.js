@@ -23,6 +23,9 @@ class App extends Component {
         prefix: "",
         includeZero: true
       },
+      axisX: {
+        title: "Days"
+      },
       data: [
           {
               type: "line",
@@ -61,6 +64,9 @@ class App extends Component {
               title: "Fraction of population",
               prefix: "",
               includeZero: true
+          },
+          axisX: {
+              title: "Days"
           },
           data: [
               {
@@ -109,7 +115,9 @@ class App extends Component {
                          onRef={ref => this.chart_seir = ref}
           />
           {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+            <h4>S, E, I, R are short for Susceptible (people who can get sick), Exposed (to the virus), Infected (by the virus, shit hit the fan after exposure), Recovered (included severe cases of deadness).</h4>
         </div>
+
     );
   }
 
